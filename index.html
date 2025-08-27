@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetForma - Conectando pessoas através do amor pelos pets</title>
+  <link rel="icon" type="image/x-icon" href="./assets/petforma.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="./assets/petforma-logo.png" alt="Logo da PetForma" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#pets">Pets Disponíveis</a></li>
+          <li><a href="about.html">Sobre Nós</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>PetForma</h1>
+        <p class="tagline">Conectando pessoas através do amor pelos pets</p>
+        <p>A primeira plataforma de pet sharing que permite que pessoas sem pets experimentem a companhia animal,
+          enquanto donos ocupados garantem que seus pets recebam atenção extra.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" onclick="openBookingModal()">Agendar Agora</button>
+          <a href="#services" class="btn btn-secondary">Conhecer Serviços</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚶</div>
+          <h3>Passear</h3>
+          <p>Leve um pet para passear pelo parque ou pela vizinhança. Exercício e diversão garantidos!</p>
+          <button class="btn btn-primary" onclick="openBookingModal('passear')">Agendar Passeio</button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Cuidar</h3>
+          <p>Cuide de um pet por algumas horas. Alimentação, carinho e companhia para o bichinho.</p>
+          <button class="btn btn-primary" onclick="openBookingModal('cuidar')">Agendar Cuidados</button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎾</div>
+          <h3>Brincar</h3>
+          <p>Momentos de diversão e brincadeiras. Jogos, brinquedos e muita alegria!</p>
+          <button class="btn btn-primary" onclick="openBookingModal('brincar')">Agendar Brincadeira</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pet Gallery -->
+  <section id="pets" class="pet-gallery">
+    <div class="container">
+      <h2>Pets Disponíveis</h2>
+      <div class="pets-grid">
+        <div class="pet-card">
+          <img src="./assets/persa.png" alt="Cachorro Persa">
+          <div class="pet-info">
+            <h3>Persa</h3>
+            <p>Cachorro dócil e companheiro. Adora brincar e receber carinho.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'Persa')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card">
+          <img src="./assets/toddy.png" alt="Cachorro Toddy">
+          <div class="pet-info">
+            <h3>Toddy</h3>
+            <p>Cachorro brincalhão e energético. Adora passeios e brincar com bolinhas.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'Toddy')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card">
+          <img src="./assets/petforma-logo.png" alt="Mais pets">
+          <div class="pet-info">
+            <h3>Max</h3>
+            <p>Golden Retriever amigável. Perfeito para famílias e crianças.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'Max')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card">
+          <img src="./assets/petforma-logo.png" alt="Mais pets">
+          <div class="pet-info">
+            <h3>Luna</h3>
+            <p>Gata siamesa elegante e independente. Gosta de atenção nos seus termos.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'Luna')">Agendar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeBookingModal()">&times;</span>
+      <h2>Agendar Serviço</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="service">Serviço:</label>
+          <select id="service" name="service" required>
+            <option value="">Selecione um serviço</option>
+            <option value="passear">Passear</option>
+            <option value="cuidar">Cuidar</option>
+            <option value="brincar">Brincar</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pet">Pet:</label>
+          <select id="pet" name="pet" required>
+            <option value="">Selecione um pet</option>
+            <option value="persa">Persa (Cachorro)</option>
+            <option value="toddy">Toddy (Cachorro)</option>
+            <option value="max">Max (Golden Retriever)</option>
+            <option value="luna">Luna (Gata Siamesa)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Data:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Horário:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duração:</label>
+          <select id="duration" name="duration" required>
+            <option value="30">30 minutos</option>
+            <option value="60">1 hora</option>
+            <option value="120">2 horas</option>
+            <option value="180">3 horas</option>
+            <option value="240">4 horas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Seu Nome:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="observations">Observações:</label>
+          <textarea id="observations" name="observations" 
+                    placeholder="Alguma preferência ou informação adicional?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PetForma</h3>
+          <p>Conectando pessoas através do amor pelos pets</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#pets">Pets</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: contato@petforma.com</li>
+            <li>Telefone: (11) 99999-9999</li>
+            <li>WhatsApp: (11) 99999-9999</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>Copyright © 2025 PetForma. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

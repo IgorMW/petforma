@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós - PetForma</title>
+  <link rel="icon" type="image/x-icon" href="./assets/petforma.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-container {
+      background: white;
+      margin: 2rem auto;
+      max-width: 1200px;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .about-hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .about-hero h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .about-content {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .card {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .card h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .team-section {
+      margin-top: 3rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .team-member {
+      text-align: center;
+    }
+    
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    
+    .values-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .values-list li {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: var(--bg-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .values-list li::before {
+      content: "🐾";
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="./assets/petforma-logo.png" alt="Logo da PetForma" class="logo" onclick="window.location.href='index.html'">
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#services">Serviços</a></li>
+          <li><a href="index.html#pets">Pets Disponíveis</a></li>
+          <li><a href="about.html">Sobre Nós</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Content -->
+  <div class="about-container">
+    <div class="about-hero">
+      <h1>Sobre a PetForma</h1>
+      <p class="tagline" style="font-style: italic; color: var(--text-light); font-size: 1.2rem;">
+        Transformando vidas através do amor pelos animais
+      </p>
+    </div>
+
+    <div class="about-content">
+      <section>
+        <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Nossa História</h2>
+        <p style="line-height: 1.8; color: var(--text-dark);">
+          A PetForma nasceu em 2025 com um propósito simples mas poderoso: conectar pessoas que amam animais. 
+          Percebemos que muitas pessoas desejam a companhia de um pet mas não podem ter um em casa por diversos motivos - 
+          falta de espaço, viagens frequentes, alergias na família ou restrições do condomínio.
+        </p>
+        <p style="line-height: 1.8; color: var(--text-dark); margin-top: 1rem;">
+          Por outro lado, muitos tutores precisam de ajuda para garantir que seus pets recebam a atenção e 
+          exercícios necessários durante suas longas jornadas de trabalho. Foi assim que criamos a primeira 
+          plataforma de pet sharing do Brasil, onde todos ganham - os pets, os tutores e os amantes de animais.
+        </p>
+      </section>
+
+      <div class="mission-vision">
+        <div class="card">
+          <h2>🎯 Nossa Missão</h2>
+          <p>Democratizar o acesso à companhia animal e garantir que todos os pets recebam amor, 
+             atenção e cuidados que merecem, criando uma comunidade de pessoas apaixonadas por animais.</p>
+        </div>
+        <div class="card">
+          <h2>👁️ Nossa Visão</h2>
+          <p>Ser a principal plataforma de conexão entre pets e pessoas no Brasil, transformando 
+             a forma como a sociedade se relaciona com os animais de estimação.</p>
+        </div>
+      </div>
+
+      <section>
+        <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Nossos Valores</h2>
+        <ul class="values-list">
+          <li>
+            <strong>Amor e Respeito:</strong> Tratamos todos os animais com carinho e dignidade.
+          </li>
+          <li>
+            <strong>Segurança:</strong> Priorizamos o bem-estar de pets e pessoas em todas as interações.
+          </li>
+          <li>
+            <strong>Confiança:</strong> Construímos relações transparentes e duradouras com nossa comunidade.
+          </li>
+          <li>
+            <strong>Inclusão:</strong> Acreditamos que todos devem ter acesso à alegria da companhia animal.
+          </li>
+          <li>
+            <strong>Responsabilidade:</strong> Promovemos a posse responsável e o cuidado consciente com os pets.
+          </li>
+        </ul>
+      </section>
+
+      <section class="team-section">
+        <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 1rem;">Nossa Equipe</h2>
+        <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
+          Somos apaixonados por animais e tecnologia
+        </p>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="./assets/petforma-logo.png" alt="Ana Silva">
+            <h3>Ana Silva</h3>
+            <p style="color: var(--text-light);">CEO & Fundadora</p>
+          </div>
+          <div class="team-member">
+            <img src="./assets/petforma-logo.png" alt="Carlos Santos">
+            <h3>Carlos Santos</h3>
+            <p style="color: var(--text-light);">Veterinário Chefe</p>
+          </div>
+          <div class="team-member">
+            <img src="./assets/petforma-logo.png" alt="Maria Oliveira">
+            <h3>Maria Oliveira</h3>
+            <p style="color: var(--text-light);">Diretora de Operações</p>
+          </div>
+          <div class="team-member">
+            <img src="./assets/petforma-logo.png" alt="João Pedro">
+            <h3>João Pedro</h3>
+            <p style="color: var(--text-light);">Coordenador de Cuidadores</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 3rem; text-align: center; padding: 2rem; background: var(--bg-light); border-radius: 12px;">
+        <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Junte-se a Nós!</h2>
+        <p style="margin-bottom: 1.5rem;">
+          Faça parte da comunidade PetForma e descubra a alegria de compartilhar momentos especiais com pets incríveis.
+        </p>
+        <button class="btn btn-primary" onclick="window.location.href='index.html#services'">
+          Começar Agora
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PetForma</h3>
+          <p>Conectando pessoas através do amor pelos pets</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#services">Serviços</a></li>
+            <li><a href="index.html#pets">Pets</a></li>
+            <li><a href="contact.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: contato@petforma.com</li>
+            <li>Telefone: (11) 99999-9999</li>
+            <li>WhatsApp: (11) 99999-9999</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>Copyright © 2025 PetForma. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
