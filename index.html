@@ -91,18 +91,18 @@
           </div>
         </div>
         <div class="pet-card">
-          <img src="./assets/petforma-logo.png" alt="Mais pets">
+          <img src="./assets/brigite.png" alt="Mais pets">
           <div class="pet-info">
-            <h3>Max</h3>
-            <p>Golden Retriever amigável. Perfeito para famílias e crianças.</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Max')">Agendar</button>
+            <h3>Brigite</h3>
+            <p>Labradora amigável. Perfeita para famílias e crianças.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'Brigite')">Agendar</button>
           </div>
         </div>
         <div class="pet-card">
-          <img src="./assets/petforma-logo.png" alt="Mais pets">
+          <img src="./assets/luna.png" alt="Mais pets">
           <div class="pet-info">
             <h3>Luna</h3>
-            <p>Gata siamesa elegante e independente. Gosta de atenção nos seus termos.</p>
+            <p>Cadela fofa e independente. Gosta de atenção nos seus termos.</p>
             <button class="btn btn-primary" onclick="openBookingModal('', 'Luna')">Agendar</button>
           </div>
         </div>
@@ -131,8 +131,8 @@
             <option value="">Selecione um pet</option>
             <option value="persa">Persa (Cachorro)</option>
             <option value="toddy">Toddy (Cachorro)</option>
-            <option value="max">Max (Golden Retriever)</option>
-            <option value="luna">Luna (Gata Siamesa)</option>
+            <option value="brigite">Brigite (Cachorro)</option>
+            <option value="luna">Luna (Cachorro)</option>
           </select>
         </div>
         <div class="form-group">
@@ -151,6 +151,13 @@
             <option value="120">2 horas</option>
             <option value="180">3 horas</option>
             <option value="240">4 horas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Localidade:</label>
+          <select id="location" name="location" required>
+            <option value="">Selecione sua localidade</option>
+            <!-- As opções serão preenchidas dinamicamente pelo JavaScript -->
           </select>
         </div>
         <div class="form-group">
@@ -207,6 +214,7 @@
     </div>
   </footer>
 
+  <script src="locations-rj.js"></script>
   <script src="script.js"></script>
 </body>
 

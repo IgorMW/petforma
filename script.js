@@ -26,6 +26,11 @@ function openBookingModal(service = '', petName = '') {
     // Set minimum date to today
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').setAttribute('min', today);
+    
+    // Populate locations if not already done
+    if (typeof populateLocationSelect === 'function') {
+        populateLocationSelect();
+    }
 }
 
 // Close booking modal
@@ -53,6 +58,7 @@ if (bookingForm) {
             date: document.getElementById('date').value,
             time: document.getElementById('time').value,
             duration: document.getElementById('duration').value,
+            location: document.getElementById('location').value,
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
@@ -70,13 +76,17 @@ if (bookingForm) {
         const petNames = {
             'persa': 'Persa',
             'toddy': 'Toddy',
-            'max': 'Max',
+            'brigite': 'Brigite',
             'luna': 'Luna'
         };
         
         // Format date
         const dateObj = new Date(formData.date);
         const formattedDate = dateObj.toLocaleDateString('pt-BR');
+        
+        // Get location text from selected option
+        const locationSelect = document.getElementById('location');
+        const locationText = locationSelect.options[locationSelect.selectedIndex].text;
         
         // Create confirmation message
         const confirmMessage = `
@@ -87,6 +97,7 @@ if (bookingForm) {
             Data: ${formattedDate}
             Horário: ${formData.time}
             Duração: ${formData.duration} minutos
+            Localidade: ${locationText}
             
             Nome: ${formData.name}
             Email: ${formData.email}
@@ -188,7 +199,7 @@ window.addEventListener('load', () => {
 const petAvailability = {
     persa: { available: true, nextAvailable: '2025-01-15' },
     toddy: { available: true, nextAvailable: '2025-01-16' },
-    max: { available: false, nextAvailable: '2025-01-20' },
+    brigite: { available: false, nextAvailable: '2025-09-20' },
     luna: { available: true, nextAvailable: '2025-01-17' }
 };
 
