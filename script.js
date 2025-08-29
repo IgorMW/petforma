@@ -76,8 +76,12 @@ if (bookingForm) {
         const petNames = {
             'persa': 'Persa',
             'toddy': 'Toddy',
-            'brigite': 'Brigite',
-            'luna': 'Luna'
+            'nina': 'Nina',
+            'luna': 'Luna',
+            'thor': 'Thor',
+            'mel': 'Mel',
+            'max': 'Max',
+            'dalla': 'Dalla'
         };
         
         // Format date
@@ -199,8 +203,12 @@ window.addEventListener('load', () => {
 const petAvailability = {
     persa: { available: true, nextAvailable: '2025-01-15' },
     toddy: { available: true, nextAvailable: '2025-01-16' },
-    brigite: { available: false, nextAvailable: '2025-09-20' },
-    luna: { available: true, nextAvailable: '2025-01-17' }
+    nina: { available: true, nextAvailable: '2025-09-20' },
+    luna: { available: true, nextAvailable: '2025-01-17' },
+    thor: { available: true, nextAvailable: '2025-01-18' },
+    mel: { available: true, nextAvailable: '2025-01-19' },
+    max: { available: true, nextAvailable: '2025-01-20' },
+    dalla: { available: true, nextAvailable: '2025-01-21' }
 };
 
 // Update pet cards with availability
