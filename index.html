@@ -35,8 +35,7 @@
         <p class="tagline">Conectando pessoas e pets através do amor.</p>
         <p>A primeira plataforma que permite que pessoas sem pets experimentem a companhia de um animalzinho.</p>
         <div class="cta-buttons">
-          <button class="btn btn-primary" onclick="openBookingModal()">Agendar Agora</button>
-          <a href="#services" class="btn btn-secondary">Conhecer Serviços</a>
+          <a href="#services" class="btn btn-primary">Conheça Nossas Opções</a>
         </div>
       </div>
     </div>
@@ -48,24 +47,140 @@
       <h2 class="section-title">Nossos Serviços</h2>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">🚶</div>
-          <h3>Passear</h3>
-          <p>Leve um pet para passear pelo parque ou pela vizinhança. Exercício e diversão garantidos!</p>
-          <button class="btn btn-primary" onclick="openBookingModal('passear')">Agendar Passeio</button>
+          <div class="service-icon">
+        <img src="./assets/seja-tio-por-um-dia.png" alt="Seja Tio por um Dia" class="service-img">
+          </div>
+          <div class="service-text">
+        <h3 class="service-title">Seja Tio por um Dia</h3>
+        <p class="service-desc">Cuidados, passeios e diversão nos seus dias disponíveis.<br>Experimente um final de semana diferente.</p>
+          </div>
+          <div class="service-btn-wrapper">
+        <button class="btn btn-primary" onclick="openBookingModal('passear')">Seja Tio Por Um Dia</button>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🏠</div>
-          <h3>Cuidar</h3>
-          <p>Cuide de um pet por algumas horas. Alimentação, carinho e companhia para o bichinho.</p>
-          <button class="btn btn-primary" onclick="openBookingModal('cuidar')">Agendar Cuidados</button>
+          <div class="service-icon">
+        <img src="./assets/apadrinhe-um-pet.png" alt="Apadrinhe um Pet" class="service-img">
+          </div>
+          <div class="service-text">
+        <h3 class="service-title">Apadrinhe um Pet</h3>
+        <p class="service-desc">Cuide do Pet da sua escolha com recorrência e viva a experiência de ter amor e brincadeiras dele quando você quiser e puder.</p>
+          </div>
+          <div class="service-btn-wrapper">
+        <button class="btn btn-primary" onclick="openBookingModal('cuidar')">Escolha o Seu Afilhado</button>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🎾</div>
-          <h3>Brincar</h3>
-          <p>Momentos de diversão e brincadeiras. Jogos, brinquedos e muita alegria!</p>
-          <button class="btn btn-primary" onclick="openBookingModal('brincar')">Agendar Brincadeira</button>
+          <div class="service-icon">
+        <img src="./assets/leve-para-passear-png.jpeg" alt="Leve um Pet para passear" class="service-img">
+          </div>
+          <div class="service-text">
+        <h3 class="service-title">Leve um Pet para passear</h3>
+        <p class="service-desc">Está com tempo curto e quer dar uma caminhada ao ar livre? Leve um de nossos Pets para te acompanhar.</p>
+          </div>
+          <div class="service-btn-wrapper">
+        <button class="btn btn-primary" onclick="openBookingModal('brincar')">Agendar Passeio</button>
+          </div>
         </div>
-      </div>
+            </div>
+            <style>
+        .services-grid {
+          display: flex;
+          flex-direction: row;
+          gap: 32px;
+          justify-content: center;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+          }
+          .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 12px 32px 12px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            min-width: 300px;
+            max-width: 340px;
+            margin: 0 0 24px 0;
+            height: 420px;
+            box-sizing: border-box;
+            justify-content: flex-start;
+          }
+          .service-icon {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: none !important;
+            margin-top: 32px;
+          }
+          .service-img {
+            object-fit: cover;
+            width: 160px;
+            height: 160px;
+            display: block;
+            border-radius: 16px;
+            margin-bottom: 48px;
+            background: none !important;
+          }
+          .service-text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 16px;
+            margin-top: 16px;
+          }
+          .service-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            line-height: 1.3;
+            width: 100%;
+            background: #fff;
+            z-index: 1;
+            position: relative;
+          }
+          .service-desc {
+            text-align: center;
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.6;
+            width: 100%;
+          }
+          .service-btn-wrapper {
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+          }
+          @media (max-width: 1200px) {
+            .services-grid {
+            flex-wrap: wrap;
+            gap: 20px;
+            }
+            .service-card {
+            min-width: 260px;
+            max-width: 98vw;
+            height: auto;
+            }
+          }
+          @media (max-width: 900px) {
+            .services-grid {
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: nowrap;
+            }
+            .service-card {
+            min-width: 90vw;
+            max-width: 98vw;
+            height: auto;
+            }
+          }
+          }
+        }
+      </style>
     </div>
   </section>
 
