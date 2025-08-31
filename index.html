@@ -187,68 +187,108 @@
     <div class="container">
       <h2>Dê um match com seu Pet</h2>
       <div class="pets-grid">
-        <div class="pet-card">
+        <div class="pet-card" data-pet-id="persa">
           <img src="./assets/persa.png" alt="Cachorro Persa">
           <div class="pet-info">
             <h3>Persa</h3>
-            <p>Macho - 4 meses<br> Dócil e companheiro. Adora brincar e receber carinho.<br>Santa Rosa / Niterói</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Persa')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 4 meses</span>
+              <span class="pet-shelter">🏠 Patas do Bem</span>
+              <span class="pet-location">📍 Santa Rosa, Niterói - RJ</span>
+            </div>
+            <p class="pet-description">Dócil e companheiro. Adora brincar e receber carinho.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'persa')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
+        <div class="pet-card" data-pet-id="toddy">
           <img src="./assets/toddy.png" alt="Cachorro Toddy">
           <div class="pet-info">
             <h3>Toddy</h3>
-            <p>Macho - 6 meses<br> Muito brincalhão. Adora passeios e brincar com bolinhas.<br> Zona Norte / Rio de Janeiro</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Toddy')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 6 meses</span>
+              <span class="pet-shelter">🏠 Pata Amiga</span>
+              <span class="pet-location">📍 Zona Norte, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Muito brincalhão. Adora passeios e brincar com bolinhas.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'toddy')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
-          <img src="./assets/nina.png" alt="Mais pets">
+        <div class="pet-card" data-pet-id="nina">
+          <img src="./assets/nina.png" alt="Cachorro Nina">
           <div class="pet-info">
             <h3>Nina</h3>
-            <p>Fêmea - 8 meses<br> Amigável e perfeita para famílias e crianças.<br> Zona Oeste / Rio de Janeiro</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Nina')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 8 meses</span>
+              <span class="pet-shelter">🏠 Casa das Patinhas</span>
+              <span class="pet-location">📍 Zona Oeste, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Amigável e perfeita para famílias e crianças.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'nina')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
-          <img src="./assets/luna.png" alt="Mais pets">
+        <div class="pet-card" data-pet-id="luna">
+          <img src="./assets/luna.png" alt="Cachorro Luna">
           <div class="pet-info">
             <h3>Luna</h3>
-            <p>Fêmea - 1 ano<br> Fofa e independente. Gosta de atenção.<br> Zona Sul / Rio de Janeiro</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Luna')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 1 ano</span>
+              <span class="pet-shelter">🏠 Cantinho dos Focinhos</span>
+              <span class="pet-location">📍 Zona Sul, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Fofa e independente. Gosta de atenção.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'luna')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
-          <img src="./assets/thor.png" alt="Mais pets">
+        <div class="pet-card" data-pet-id="thor">
+          <img src="./assets/thor.png" alt="Cachorro Thor">
           <div class="pet-info">
             <h3>Thor</h3>
-            <p>Macho - 1 ano<br> Muito amigável, adora crianças. Ativo e adora brincadeiras.<br> Cabuçu / Nova Iguaçu</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Thor')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 1 ano</span>
+              <span class="pet-shelter">🏠 ONG Patas do Amor</span>
+              <span class="pet-location">📍 Cabuçu, Nova Iguaçu - RJ</span>
+            </div>
+            <p class="pet-description">Muito amigável, adora crianças. Ativo e adora brincadeiras.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'thor')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
-          <img src="./assets/mel.png" alt="Mais pets">
+        <div class="pet-card" data-pet-id="mel">
+          <img src="./assets/mel.png" alt="Cachorro Mel">
           <div class="pet-info">
             <h3>Mel</h3>
-            <p>Fêmea - 3 anos<br> Dócil, amorosa e tranquila. Prefere ambientes calmos.<br> Região Oceânica / Niteroi</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Mel')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 3 anos</span>
+              <span class="pet-shelter">🏠 Instituto Luz Animal</span>
+              <span class="pet-location">📍 Região Oceânica, Niterói - RJ</span>
+            </div>
+            <p class="pet-description">Dócil, amorosa e tranquila. Prefere ambientes calmos.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'mel')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
-          <img src="./assets/max.png" alt="Mais pets">
+        <div class="pet-card" data-pet-id="max">
+          <img src="./assets/max.png" alt="Cachorro Max">
           <div class="pet-info">
             <h3>Max</h3>
-            <p>Macho - 2 anos<br> Amoroso e carente. Adora ficar abraçado.<br> Centro / Nova Iguaçu</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Max')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 2 anos</span>
+              <span class="pet-shelter">🏠 ONG Estrela Animal</span>
+              <span class="pet-location">📍 Centro, Nova Iguaçu - RJ</span>
+            </div>
+            <p class="pet-description">Amoroso e carente. Adora ficar abraçado.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'max')">Agendar</button>
           </div>
         </div>
-        <div class="pet-card">
-          <img src="./assets/dalla.png" alt="Mais pets">
+        <div class="pet-card" data-pet-id="dalla">
+          <img src="./assets/dalla.png" alt="Cachorro Dalla">
           <div class="pet-info">
             <h3>Dalla</h3>
-            <p>Fêmea - 4 anos<br> Dócil e adora brincadeiras. Muito carinhosa. <br>Zona Sul / Rio de Janeiro</p>
-            <button class="btn btn-primary" onclick="openBookingModal('', 'Dalla')">Agendar</button>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 4 anos</span>
+              <span class="pet-shelter">🏠 Cantinho dos Focinhos</span>
+              <span class="pet-location">📍 Zona Sul, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Dócil e adora brincadeiras. Muito carinhosa.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'dalla')">Agendar</button>
           </div>
         </div>
       </div>
@@ -271,18 +311,27 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="pet">Pet:</label>
-          <select id="pet" name="pet" required>
-            <option value="">Selecione um pet</option>
-            <option value="persa">Persa (Cachorro)</option>
-            <option value="toddy">Toddy (Cachorro)</option>
-            <option value="nina">Nina (Cachorro)</option>
-            <option value="luna">Luna (Cachorro)</option>
-            <option value="thor">Thor (Cachorro)</option>
-            <option value="mel">Mel (Cachorro)</option>
-            <option value="max">Max (Cachorro)</option>
-            <option value="dalla">Dalla (Cachorro)</option>
+          <label for="location">Localidade:</label>
+          <select id="location" name="location" required>
+            <option value="">Selecione sua localidade</option>
+            <!-- Opções serão preenchidas dinamicamente baseadas nos pets cadastrados -->
           </select>
+        </div>
+        <div class="form-group">
+          <label for="pet">Pet Disponível:</label>
+          <select id="pet" name="pet" required>
+            <option value="">Primeiro selecione uma localidade</option>
+          </select>
+          <div id="petInfoDisplay" class="pet-info-display" style="display: none;">
+            <div class="pet-selected-info">
+              <img id="petInfoImage" src="" alt="" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
+              <div class="pet-selected-details">
+                <h4 id="petInfoName"></h4>
+                <p id="petInfoDetails"></p>
+                <p id="petInfoShelter"></p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="date">Data:</label>
@@ -295,18 +344,7 @@
         <div class="form-group">
           <label for="duration">Duração:</label>
           <select id="duration" name="duration" required>
-            <option value="30">30 minutos</option>
-            <option value="60">1 hora</option>
-            <option value="120">2 horas</option>
-            <option value="180">3 horas</option>
-            <option value="240">4 horas</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="location">Localidade:</label>
-          <select id="location" name="location" required>
-            <option value="">Selecione sua localidade</option>
-            <!-- As opções serão preenchidas dinamicamente pelo JavaScript -->
+            <option value="">Primeiro selecione um serviço</option>
           </select>
         </div>
         <div class="form-group">
@@ -360,7 +398,7 @@
     </div>
   </footer>
 
-  <script src="locations-rj.js"></script>
+  <script src="pets-data.js"></script>
   <script src="script.js"></script>
 </body>
 
