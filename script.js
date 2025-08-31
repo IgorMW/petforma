@@ -67,9 +67,9 @@ if (bookingForm) {
         
         // Format service names
         const serviceNames = {
-            'passear': 'Passeio',
-            'cuidar': 'Cuidados',
-            'brincar': 'Brincadeira'
+            'passear': 'Seja Tio Por Um Dia',
+            'cuidar': 'Apadrinhe Um Pet',
+            'brincar': 'Leve Um Pet Para Passear'
         };
         
         // Format pet names
@@ -92,33 +92,23 @@ if (bookingForm) {
         const locationSelect = document.getElementById('location');
         const locationText = locationSelect.options[locationSelect.selectedIndex].text;
         
-        // Create confirmation message
-        const confirmMessage = `
-            🎉 Agendamento Confirmado!
-            
-            Serviço: ${serviceNames[formData.service]}
-            Pet: ${petNames[formData.pet]}
-            Data: ${formattedDate}
-            Horário: ${formData.time}
-            Duração: ${formData.duration} minutos
-            Localidade: ${locationText}
-            
-            Nome: ${formData.name}
-            Email: ${formData.email}
-            Telefone: ${formData.phone}
-            
-            ${formData.observations ? 'Observações: ' + formData.observations : ''}
-            
-            Você receberá um email de confirmação em breve!
-        `;
-        
-        alert(confirmMessage);
-        
         // In a real application, here you would send the data to a server
         console.log('Booking data:', formData);
         
-        // Close modal and reset form
-        closeBookingModal();
+        // Create URL parameters for the confirmation page
+        const params = new URLSearchParams({
+            service: serviceNames[formData.service],
+            pet: petNames[formData.pet],
+            date: formattedDate,
+            time: formData.time,
+            duration: formData.duration,
+            location: locationText,
+            name: formData.name,
+            email: formData.email
+        });
+        
+        // Redirect to order completed page
+        window.location.href = `order-completed.html?${params.toString()}`;
     });
 }
 

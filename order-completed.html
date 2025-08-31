@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Concluído - PetForma</title>
+  <link rel="icon" type="image/x-icon" href="./assets/petforma.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .success-section {
+      background: var(--bg-white);
+      padding: 4rem 0;
+      margin: 2rem 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-medium);
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+    }
+
+    .success-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 2rem;
+      background: linear-gradient(135deg, #27AE60, #2ECC71);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.5s ease;
+    }
+
+    .success-icon::before {
+      content: '✓';
+      font-size: 50px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .success-title {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s ease 0.2s both;
+    }
+
+    .success-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      animation: fadeInUp 0.6s ease 0.4s both;
+    }
+
+    .promo-section {
+      background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+      padding: 2.5rem;
+      border-radius: 20px;
+      margin: 2rem 0 3rem;
+      animation: fadeInUp 0.6s ease 0.6s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo-section::before {
+      content: '🎉';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      font-size: 80px;
+      opacity: 0.1;
+      transform: rotate(-15deg);
+    }
+
+    .promo-section::after {
+      content: '🎁';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      font-size: 80px;
+      opacity: 0.1;
+      transform: rotate(15deg);
+    }
+
+    .promo-text {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .promo-code {
+      display: inline-block;
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      letter-spacing: 2px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .promo-code:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .copy-indicator {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--primary-color);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: normal;
+      letter-spacing: normal;
+    }
+
+    .partner-info {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .partner-logo {
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    .donation-info {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #E8F5E9;
+      border-radius: 15px;
+      line-height: 1.6;
+    }
+
+    .dog-image-container {
+      margin: 3rem 0 1rem;
+      animation: fadeInUp 0.6s ease 0.8s both;
+    }
+
+    .dog-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .thank-you-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text-dark);
+      margin-top: 1.5rem;
+      animation: fadeInUp 0.6s ease 1s both;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease 1.2s both;
+    }
+
+    .btn-home {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-secondary-action {
+      background: white;
+      color: var(--primary-color);
+      padding: 12px 30px;
+      border: 2px solid var(--primary-color);
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary-action:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .copied-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .copied-toast.show {
+      opacity: 1;
+      visibility: visible;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateX(-50%) translateY(20px);
+      }
+      to {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .success-title {
+        font-size: 2rem;
+      }
+
+      .success-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .promo-code {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+      }
+
+      .promo-text {
+        font-size: 1rem;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-home,
+      .btn-secondary-action {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="./assets/petforma-logo.png" alt="Logo da PetForma" class="logo" onclick="window.location.href='index.html'">
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#services">Serviços</a></li>
+          <li><a href="index.html#pets">Pets</a></li>
+          <li><a href="donation.html">Faça uma doação</a></li>
+          <li><a href="about.html">Sobre Nós</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Success Section -->
+  <section class="success-section">
+    <div class="success-container">
+      <div class="success-icon"></div>
+      
+      <h1 class="success-title">Seu pedido concluído com sucesso!</h1>
+      
+      <p class="success-subtitle">
+        Você receberá um email com todas as informações detalhadas.
+      </p>
+
+      <div class="promo-section">
+        <p class="promo-text">
+          Use nosso código <strong>PETFORMA</strong> nas lojas da rede <span class="partner-logo">DogAuAu</span> 
+          para incrementar o tempo de vocês com brinquedos e outros petiscos com 5% de desconto em qualquer compra.
+        </p>
+        
+        <div class="promo-code" onclick="copyPromoCode()">
+          PETFORMA
+          <span class="copy-indicator">Clique para copiar</span>
+        </div>
+
+        <div class="donation-info">
+          Usando esse código, parte dos lucros das vendas são destinados como doações aos nossos abrigos parceiros.
+        </div>
+      </div>
+
+      <div class="dog-image-container">
+        <img src="./assets/toddy.png" alt="Cachorro feliz" class="dog-image">
+        <p class="thank-you-text">Obrigado!</p>
+      </div>
+
+      <div class="action-buttons">
+        <a href="index.html" class="btn-home">Voltar ao Início</a>
+        <a href="index.html#pets" class="btn-secondary-action">Ver Mais Pets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast notification -->
+  <div id="copiedToast" class="copied-toast">
+    ✓ Código copiado com sucesso!
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#services">Serviços</a></li>
+            <li><a href="index.html#pets">Pets</a></li>
+            <li><a href="donation.html">Faça uma doação</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: contato@petforma.com</li>
+            <li>Telefone: (21) 99999-9999</li>
+            <li>WhatsApp: (21) 99999-9999</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>Copyright © 2025 PetForma. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyPromoCode() {
+      navigator.clipboard.writeText('PETFORMA').then(function() {
+        const toast = document.getElementById('copiedToast');
+        toast.classList.add('show');
+        
+        setTimeout(function() {
+          toast.classList.remove('show');
+        }, 3000);
+      }, function(err) {
+        alert('Erro ao copiar código. Por favor, copie manualmente: PETFORMA');
+      });
+    }
+
+    // Show booking details if available
+    window.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingData = {};
+      
+      // Collect all booking parameters
+      ['service', 'pet', 'date', 'time', 'duration', 'location', 'name', 'email'].forEach(param => {
+        const value = urlParams.get(param);
+        if (value) {
+          bookingData[param] = value;
+        }
+      });
+
+      // If we have booking data, we could display it in a summary
+      if (Object.keys(bookingData).length > 0) {
+        console.log('Booking confirmed:', bookingData);
+        // Could add a booking summary section here if needed
+      }
+    });
+  </script>
+</body>
+
+</html>
