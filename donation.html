@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faça uma Doação - PetForma</title>
+  <link rel="icon" type="image/x-icon" href="./assets/petforma.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .donation-section {
+      background: var(--bg-white);
+      padding: 4rem 0;
+      margin: 2rem 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-medium);
+      min-height: 500px;
+    }
+
+    .donation-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .donation-left {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .donation-right {
+      flex: 0 0 400px;
+      text-align: center;
+    }
+
+    .donation-title {
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Donation Illustration Styles */
+    .donation-illustration {
+      width: 100%;
+      max-width: 400px;
+      height: 280px;
+      margin: 2rem auto 3rem;
+      position: relative;
+      background: linear-gradient(135deg, #87CEEB 0%, #ADD8E6 100%);
+      border-radius: 20px;
+      overflow: visible;
+    }
+
+    .hand-coin {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .hand {
+      position: relative;
+      animation: dropCoin 2s ease-in-out infinite;
+    }
+
+    .sleeve {
+      position: absolute;
+      width: 80px;
+      height: 40px;
+      background: #E74C3C;
+      border-radius: 10px;
+      top: 20px;
+      left: -10px;
+      transform: rotate(-15deg);
+    }
+
+    .hand-shape {
+      position: relative;
+      width: 60px;
+      height: 80px;
+      background: #FDBCB4;
+      border-radius: 30px 30px 40px 40px;
+      margin-left: 20px;
+    }
+
+    .fingers {
+      position: absolute;
+      width: 45px;
+      height: 25px;
+      background: #FDBCB4;
+      border-radius: 10px;
+      top: -10px;
+      left: 8px;
+    }
+
+    .thumb {
+      position: absolute;
+      width: 20px;
+      height: 35px;
+      background: #FDBCB4;
+      border-radius: 10px;
+      top: 15px;
+      left: -8px;
+      transform: rotate(20deg);
+    }
+
+    .coin {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      border-radius: 50%;
+      top: 60px;
+      left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: rotateCoin 2s ease-in-out infinite;
+    }
+
+    .dollar-sign {
+      font-size: 24px;
+      font-weight: bold;
+      color: #8B4513;
+    }
+
+    .donation-box {
+      position: absolute;
+      width: 180px;
+      height: 150px;
+      background: #F0F0F0;
+      border: 3px solid #D3D3D3;
+      border-radius: 15px;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .box-slot {
+      position: absolute;
+      width: 100px;
+      height: 8px;
+      background: #2C3E50;
+      border-radius: 4px;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .heart {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background: #E74C3C;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #E74C3C;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -30px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 30px;
+    }
+
+    .plant {
+      position: absolute;
+      bottom: 10px;
+      width: 60px;
+      height: 80px;
+    }
+
+    .plant-left {
+      left: 20px;
+    }
+
+    .plant-right {
+      right: 20px;
+    }
+
+    .plant::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 40px;
+      background: #27AE60;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .plant::after {
+      content: '🌿';
+      position: absolute;
+      font-size: 40px;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes dropCoin {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+    }
+
+    @keyframes rotateCoin {
+      0%, 100% {
+        transform: rotateY(0deg);
+      }
+      50% {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .donation-info {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .donation-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .payment-btn {
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 180px;
+    }
+
+    .payment-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+    }
+
+    .payment-btn.boleto {
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      min-width: 250px;
+    }
+
+    .dog-image {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+    }
+
+    .thank-you {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 1rem;
+    }
+
+    .payment-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .payment-modal-content {
+      background-color: var(--bg-white);
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .payment-modal-content h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .payment-details {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .payment-details p {
+      margin: 0.5rem 0;
+      color: var(--text-dark);
+      font-size: 1rem;
+    }
+
+    .payment-details strong {
+      color: var(--primary-color);
+    }
+
+    .copy-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--secondary-color);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 968px) {
+      .donation-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .donation-left {
+        max-width: 100%;
+      }
+
+      .donation-right {
+        flex: 1;
+        max-width: 100%;
+      }
+
+      .payment-buttons {
+        justify-content: center;
+      }
+
+      .payment-btn {
+        min-width: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .donation-title {
+        font-size: 1.4rem;
+      }
+
+      .payment-btn {
+        min-width: 100%;
+        font-size: 1rem;
+      }
+
+      .thank-you {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="./assets/petforma-logo.png" alt="Logo da PetForma" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#services">Serviços</a></li>
+          <li><a href="index.html#pets">Pets</a></li>
+          <li><a href="donation.html">Faça uma doação</a></li>
+          <li><a href="about.html">Sobre Nós</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Donation Section -->
+  <section class="donation-section">
+    <div class="donation-container">
+      <div class="donation-left">
+        <h1 class="donation-title">Aqui você colabora com a causa animal e ajuda animais abandonados.</h1>
+        
+        <!-- Donation Box Illustration -->
+        <div class="donation-illustration">
+          <div class="hand-coin">
+            <div class="hand">
+              <div class="sleeve"></div>
+              <div class="hand-shape">
+                <div class="fingers"></div>
+                <div class="thumb"></div>
+              </div>
+            </div>
+            <div class="coin">
+              <span class="dollar-sign">$</span>
+            </div>
+          </div>
+          <div class="donation-box">
+            <div class="box-slot"></div>
+            <div class="heart"></div>
+          </div>
+          <div class="plant plant-left"></div>
+          <div class="plant plant-right"></div>
+        </div>
+        
+        <p class="donation-info">
+          Todas as doações são direcionadas integralmente para os abrigos parceiros.
+        </p>
+        
+        <p class="donation-subtitle">Doe qualquer valor utilizando os dados abaixo:</p>
+        
+        <div class="payment-buttons">
+          <button class="payment-btn" onclick="openPaymentModal('pix')">PIX</button>
+          <button class="payment-btn" onclick="openPaymentModal('cartao')">Cartão de Crédito</button>
+          <button class="payment-btn boleto" onclick="openPaymentModal('boleto')">Boleto Bancário</button>
+        </div>
+      </div>
+      
+      <div class="donation-right">
+        <img src="./assets/toddy.png" alt="Cachorro feliz" class="dog-image">
+        <p class="thank-you">Obrigado!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Modal for PIX -->
+  <div id="pixModal" class="payment-modal">
+    <div class="payment-modal-content">
+      <span class="close" onclick="closePaymentModal('pix')">&times;</span>
+      <h3>Doação via PIX</h3>
+      <div class="payment-details">
+        <p><strong>Chave PIX (CNPJ):</strong></p>
+        <p>11.111.111/1111-11 <button class="copy-btn" onclick="copyToClipboard('11.111.111/1111-11')">Copiar</button></p>
+        <p style="margin-top: 1rem;"><strong>Nome:</strong> PetForma - Associação de Proteção Animal</p>
+        <p><strong>Banco:</strong> Banco do Brasil</p>
+      </div>
+      <p style="text-align: center; color: var(--text-light); margin-top: 1rem;">
+        Após realizar a transferência, envie o comprovante para contato@petforma.com
+      </p>
+    </div>
+  </div>
+
+  <!-- Payment Modal for Credit Card -->
+  <div id="cartaoModal" class="payment-modal">
+    <div class="payment-modal-content">
+      <span class="close" onclick="closePaymentModal('cartao')">&times;</span>
+      <h3>Doação via Cartão de Crédito</h3>
+      <div class="payment-details">
+        <p style="text-align: center; margin: 2rem 0;">
+          <strong>Link para pagamento seguro:</strong><br><br>
+          <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 1.1rem;">
+            www.petforma.com/doar
+          </a>
+        </p>
+        <p style="text-align: center; color: var(--text-light);">
+          Você será redirecionado para nossa plataforma de pagamento seguro
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Modal for Boleto -->
+  <div id="boletoModal" class="payment-modal">
+    <div class="payment-modal-content">
+      <span class="close" onclick="closePaymentModal('boleto')">&times;</span>
+      <h3>Doação via Boleto Bancário</h3>
+      <div class="payment-details">
+        <p style="text-align: center; margin: 2rem 0;">
+          Para gerar um boleto para doação, entre em contato conosco:
+        </p>
+        <p><strong>Email:</strong> contato@petforma.com</p>
+        <p><strong>WhatsApp:</strong> (21) 99999-9999</p>
+        <p style="margin-top: 1rem; color: var(--text-light);">
+          Informe o valor que deseja doar e enviaremos o boleto em até 24 horas.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#services">Serviços</a></li>
+            <li><a href="index.html#pets">Pets</a></li>
+            <li><a href="donation.html">Faça uma doação</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: contato@petforma.com</li>
+            <li>Telefone: (21) 99999-9999</li>
+            <li>WhatsApp: (21) 99999-9999</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>Copyright © 2025 PetForma. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openPaymentModal(type) {
+      document.getElementById(type + 'Modal').style.display = 'block';
+    }
+
+    function closePaymentModal(type) {
+      document.getElementById(type + 'Modal').style.display = 'none';
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert('Chave PIX copiada!');
+      }, function() {
+        alert('Erro ao copiar. Por favor, copie manualmente.');
+      });
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('payment-modal')) {
+        event.target.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>
