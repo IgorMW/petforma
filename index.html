@@ -359,6 +359,41 @@
           <label for="phone">Telefone:</label>
           <input type="tel" id="phone" name="phone" required>
         </div>
+        <div class="form-group kit-section">
+          <label>Adicione um kit para tornar sua experiência mais especial:</label>
+          <div class="kit-container">
+            <img src="./assets/kit-pet.png" alt="Kit Pet" class="kit-image">
+            <div class="kit-options">
+              <div class="kit-option">
+                <input type="radio" id="kit-sobrevivencia" name="kit" value="sobrevivencia">
+                <label for="kit-sobrevivencia">
+                  <strong>Kit de Sobrevivência - R$ 40,00</strong><br>
+                  <span class="kit-description">Ração para o período, Coleira para passeios e 1 biscoito</span>
+                </label>
+              </div>
+              <div class="kit-option">
+                <input type="radio" id="kit-babao" name="kit" value="babao">
+                <label for="kit-babao">
+                  <strong>Kit Tio Babão - R$ 50,00</strong><br>
+                  <span class="kit-description">Ração para o período, Coleira para passeios, bolinha de borracha e 3 biscoitos</span>
+                </label>
+              </div>
+              <div class="kit-option">
+                <input type="radio" id="kit-vovo" name="kit" value="vovo">
+                <label for="kit-vovo">
+                  <strong>Kit Criado com a Vovó - R$ 60,00</strong><br>
+                  <span class="kit-description">Ração para o período, Coleira para passeios, brinquedo de corda, biscoitos de livre escolha</span>
+                </label>
+              </div>
+              <div class="kit-option">
+                <input type="radio" id="kit-nenhum" name="kit" value="nenhum" checked>
+                <label for="kit-nenhum">
+                  <strong>Não quero kit</strong>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="form-group">
           <label for="observations">Observações:</label>
           <textarea id="observations" name="observations" 

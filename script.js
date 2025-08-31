@@ -93,6 +93,7 @@ if (bookingForm) {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
+            kit: document.querySelector('input[name="kit"]:checked')?.value || 'nenhum',
             observations: document.getElementById('observations').value
         };
         
@@ -124,6 +125,15 @@ if (bookingForm) {
         const durationSelect = document.getElementById('duration');
         const durationText = durationSelect.options[durationSelect.selectedIndex].text;
         
+        // Get kit information
+        const kitNames = {
+            'sobrevivencia': 'Kit de Sobrevivência - R$ 40,00',
+            'babao': 'Kit Tio Babão - R$ 50,00',
+            'vovo': 'Kit Criado com a Vovó - R$ 60,00',
+            'nenhum': 'Sem kit'
+        };
+        const selectedKit = kitNames[formData.kit] || 'Sem kit';
+        
         // In a real application, here you would send the data to a server
         console.log('Booking data:', formData);
         
@@ -133,6 +143,7 @@ if (bookingForm) {
             pet: petName,
             duration: durationText,
             location: locationText,
+            kit: selectedKit,
             name: formData.name,
             email: formData.email
         });
