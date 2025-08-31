@@ -96,32 +96,32 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 18px 12px 32px 12px;
+            padding: 20px 16px;
             background: #fff;
             border-radius: 20px;
             box-shadow: 0 2px 16px rgba(0,0,0,0.07);
             min-width: 300px;
             max-width: 340px;
             margin: 0 0 24px 0;
-            height: 420px;
+            height: 440px;
             box-sizing: border-box;
-            justify-content: flex-start;
+            justify-content: space-between;
           }
           .service-icon {
             width: 100%;
+            height: 180px;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             background: none !important;
-            margin-top: 32px;
+            margin-bottom: 10px;
           }
           .service-img {
             object-fit: cover;
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             display: block;
             border-radius: 16px;
-            margin-bottom: 48px;
             background: none !important;
           }
           .service-text {
@@ -129,31 +129,38 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 16px;
-            margin-top: 16px;
+            flex: 1;
+            margin-bottom: 10px;
           }
           .service-title {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             line-height: 1.3;
             width: 100%;
+            min-height: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: #fff;
             z-index: 1;
             position: relative;
           }
           .service-desc {
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.5;
             width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
           }
           .service-btn-wrapper {
             text-align: center;
             width: 100%;
-            margin-top: auto;
+            margin-top: 10px;
           }
           @media (max-width: 1200px) {
             .services-grid {
